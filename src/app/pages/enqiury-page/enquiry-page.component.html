@@ -1,0 +1,106 @@
+<div
+  class="enquiry-page-wrapper"
+  @fade>
+  <div class="intro-wrapper">
+    <div class="intro">
+      <h2 class="intro-text">
+        We are passionate about design and making your spaces beautiful. We
+        would love to learn more about your project, and how we can help. Please
+        fill out and submit the Inquiry Form below.
+      </h2>
+      <p class="intro-subtext">* Denotes a required field.</p>
+    </div>
+  </div>
+  <form
+    [formGroup]="enquiryForm"
+    class="form-wrapper"
+    name="enquiryForm"
+    (ngSubmit)="onSubmit()">
+    <div class="col left">
+      <div class="first-name">
+        <input
+          placeholder="First Name *"
+          formControlName="firstName">
+        <ng-container *ngIf="
+            enquiryForm.get('firstName').touched &&
+            enquiryForm.get('firstName').invalid
+          ">
+          <p class="field field-invalid">Please enter your first name.</p>
+        </ng-container>
+      </div>
+      <div class="last-name">
+        <input
+          placeholder="Last Name *"
+          formControlName="lastName">
+        <ng-container *ngIf="
+            enquiryForm.get('lastName').touched &&
+            enquiryForm.get('lastName').invalid
+          ">
+          <p class="field field-invalid">Please enter your last name.</p>
+        </ng-container>
+      </div>
+      <div class="email">
+        <input
+          placeholder="Email *"
+          formControlName="email">
+        <ng-container *ngIf="
+            enquiryForm.get('email').touched && enquiryForm.get('email').invalid
+          ">
+          <p class="field field-invalid">Please enter a valid email.</p>
+        </ng-container>
+      </div>
+      <div class="contact-number">
+        <input
+          placeholder="Contact Number"
+          formControlName="contactNumber">
+        <ng-container *ngIf="
+            enquiryForm.get('contactNumber').touched &&
+            enquiryForm.get('contactNumber').invalid
+          ">
+          <p class="field field-invalid">Please enter a valid contact number.</p>
+        </ng-container>
+      </div>
+    </div>
+    <div class="col right">
+      <div class="interested-in">
+        <p>
+          What types of projects are you interested in? *
+        </p>
+        <small>Select all that apply</small>
+        <ng-container *ngIf="
+            enquiryForm.get('projects').touched &&
+            enquiryForm.get('projects').invalid
+          ">
+          <p class="field-invalid">Please select one.</p>
+        </ng-container>
+        <div class="selection-container">
+          <div
+            *ngFor="let project of projects"
+            class="row">
+            <input
+              class="checkbox"
+              type="checkbox"
+              [value]="project.value"
+              (change)="onCheckChange($event)">
+            <label for="materials">{{ project.label }}</label>
+          </div>
+        </div>
+      </div>
+      <div class="hear-about-us">
+        <label>How did you hear about us? *</label>
+        <textarea formControlName="howDidYouHearAboutUs"></textarea>
+        <ng-container *ngIf="
+            enquiryForm.get('howDidYouHearAboutUs').touched &&
+            enquiryForm.get('howDidYouHearAboutUs').invalid
+          ">
+          <p class="field-invalid">Please enter how you heard about us.</p>
+        </ng-container>
+      </div>
+      <button
+        class="submit-button"
+        type="submit">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

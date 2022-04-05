@@ -1,0 +1,38 @@
+<div class="gallery-wrapper" @fade>
+  <p>Featured</p>
+  <div class="active-nav"></div>
+  <div
+    class="featured-showcase"
+    [routerLink]="['projects/minimalist-house']"
+    [routerLinkActive]="'active'"
+  >
+    <div class="row">
+      <div class="left">
+        <img
+          class="logo"
+          src="../../../../assets/images/minimalist_house/featured_one.jpg"
+          alt="Logo"
+        />
+      </div>
+      <div class="col right">
+        <img
+          class="logo"
+          src="../../../../assets/images/minimalist_house/featured_two.jpg"
+          alt="Logo"
+        />
+        <img
+          class="logo"
+          src="../../../../assets/images/minimalist_house/03.jpg"
+          alt="Logo"
+        />
+      </div>
+    </div>
+    <div class="showcase-text">
+      <p>Minimalist Residential Project</p>
+      <p class="showcase-bio">
+        Complete renovation of a dated 1980’ property to a minimalist modern
+        home.
+      </p>
+    </div>
+  </div>
+</div>

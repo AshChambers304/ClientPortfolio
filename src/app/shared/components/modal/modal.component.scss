@@ -1,0 +1,18 @@
+@import "/src/variables.scss";
+
+jw-modal {
+  display: none;
+
+  .jw-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    height: 100vh;
+    width: 100vw;
+
+    .jw-modal-body {
+      background: #fff;
+    }
+  }
+}

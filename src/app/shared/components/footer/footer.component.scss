@@ -1,0 +1,88 @@
+@import "/src/variables.scss";
+
+footer {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem 0;
+  width: 100%;
+  margin-top: auto;
+  .email {
+    @include var(color, clr-accent);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .foot-one {
+    width: 200px;
+    margin-bottom: 1rem;
+    text-align: center;
+    .top {
+      display: flex;
+      align-items: center;
+      i {
+        font-size: 6px;
+        margin-right: 5px;
+        margin-bottom: 0.25rem;
+      }
+      p {
+        @include var(color, clr-accent);
+        @include var(font-family, ffn);
+        @include var(font-weight, fw-m);
+        font-size: 6px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        transition: color 0.5s;
+        margin-bottom: 0.25rem;
+      }
+    }
+    .bottom {
+      p {
+        font-size: 14px !important;
+      }
+    }
+    .instagram {
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.5s;
+      &:hover {
+        color: #c0c0c0;
+      }
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  footer {
+    margin-top: auto;
+    padding: 2rem;
+    flex-flow: row;
+
+    .foot-one {
+      width: auto;
+      margin-bottom: 0;
+      text-align: left;
+      .top {
+        margin-bottom: 5px;
+        i {
+          font-size: 8px;
+          margin-right: 5px;
+        }
+        p {
+          font-size: 8px;
+        }
+      }
+      .bottom {
+        p {
+          font-size: 12px;
+        }
+      }
+      .instagram {
+        font-size: 24px;
+      }
+    }
+  }
+}

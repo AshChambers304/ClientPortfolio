@@ -1,0 +1,30 @@
+<div
+  class="mobile-nav-bar"
+  [ngClass]="{ 'mobile-nav-bar-collapsed': !(showSideNav | async) }"
+>
+  <div
+    class="mobile-nav-bar-overlay"
+    [ngStyle]="{
+      transition:
+        'background-color ' + duration + 's, visibility ' + duration + 's'
+    }"
+    [ngClass]="{ 'mobile-nav-bar-overlay-collapsed': !(showSideNav | async) }"
+    (click)="onSidebarClose()"
+  ></div>
+
+  <div
+    class="mobile-nav-bar-menu-container"
+    [ngStyle]="getSideNavBarStyle(showSideNav | async)"
+  >
+    <div>
+      <i
+        class="fas fa-times mobile-nav-bar-close"
+        (click)="onSidebarClose()"
+      ></i>
+    </div>
+
+    <div class="mobile-nav-bar-content-container">
+      <ng-container *ngTemplateOutlet="mobilenavTemplateRef"></ng-container>
+    </div>
+  </div>
+</div>

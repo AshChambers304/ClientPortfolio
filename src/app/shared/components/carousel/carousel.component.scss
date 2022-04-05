@@ -1,0 +1,69 @@
+@import "/src/variables.scss";
+
+.carousel {
+  height: 100vh;
+  width: 100vw;
+}
+
+.slide-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.slide {
+  max-width: 80vw;
+  height: auto;
+}
+
+.controls {
+  position: fixed;
+  left: 0;
+  top: 45vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.control {
+  display: flex;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  margin: 1rem;
+  outline: 0;
+  cursor: pointer;
+  padding: 0.5em;
+  font-weight: bold;
+  font-size: 3rem;
+  user-select: none;
+  opacity: 0.5;
+
+  transition: opacity 150ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
+
+  &:hover {
+    opacity: 1;
+  }
+  &:active {
+    transform: scale(1.5);
+  }
+}
+
+.arrow {
+  display: block;
+  border-left: 0.25rem solid;
+  border-bottom: 0.25rem solid;
+  color: black;
+  width: 0.5em;
+  height: 0.5em;
+  font-size: 2rem;
+
+  &.left {
+    transform: rotate(45deg);
+  }
+  &.right {
+    transform: rotate(225deg);
+  }
+}

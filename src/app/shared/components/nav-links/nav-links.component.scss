@@ -1,0 +1,108 @@
+@import "/src/variables.scss";
+
+.mobile-nav {
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    li {
+      margin: 2rem 0;
+      line-height: 10px;
+
+      :hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .nav-text {
+    text-align: center;
+    @include var(font-size, fs-mm);
+
+    :hover {
+      cursor: pointer;
+    }
+  }
+
+  ul,
+  li,
+  nav {
+    @include var(color, clr-primary);
+    @include var(font-family, ffn);
+    @include var(font-size, fs-mm);
+    @include var(font-weight, fw-m);
+    padding: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.5s;
+    &:hover,
+    &.active {
+      @include var(color, clr-accent);
+    }
+    &:focus {
+      outline: 0px;
+    }
+  }
+}
+
+.desktop-nav {
+  display: none;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+
+    li:hover {
+      cursor: pointer;
+      .active-nav {
+        transform: scale(1.1);
+      }
+    }
+  }
+  .nav-text {
+    font-size: 0.6rem;
+  }
+
+  .active {
+    .active-nav {
+      transform: scale(1.1);
+    }
+  }
+
+  .active-nav {
+    margin: 05% 35%;
+    width: 25%;
+    min-height: 5px;
+    border-bottom: 1px solid black;
+    transform: scale(0);
+    transition: all 0.2s ease-in-out;
+  }
+
+  ul,
+  li,
+  nav {
+    @include var(color, clr-primary);
+    @include var(font-family, ffn);
+    @include var(font-size, fs-mm);
+    @include var(font-weight, fw-m);
+    padding: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.5s;
+    &:hover,
+    &.active {
+      @include var(color, clr-accent);
+    }
+    &:focus {
+      outline: 0px;
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .desktop-nav {
+    display: block;
+  }
+}

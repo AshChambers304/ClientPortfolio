@@ -1,0 +1,23 @@
+<header class="nav-bar">
+  <picture
+    [routerLink]="['./']"
+    [routerLinkActive]="'active'"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    <source
+      media="(max-width: 899px)"
+      srcset="../../../../assets/images/logo-mobile.svg"
+    />
+    <source
+      media="(min-width: 900px)"
+      srcset="../../../../assets/images/logo.svg"
+    />
+    <img class="logo" src="../../../../assets/images/logo.svg" alt="Logo" />
+  </picture>
+  <div class="hamburger-toggle">
+    <i (click)="toggleSideNav()" class="fas fa-bars menu-icon"></i>
+  </div>
+  <div class="desktop-nav">
+    <app-nav-links></app-nav-links>
+  </div>
+</header>

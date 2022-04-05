@@ -1,0 +1,19 @@
+<app-mobile-nav
+  [mobilenavTemplateRef]="navContent"
+  [direction]="'right'"
+  [navWidth]="100"
+  [duration]="0.25"
+></app-mobile-nav>
+<div class="main-container" [style.display]="!siteHidden ? 'block' : 'none'">
+  <app-floating-nav></app-floating-nav>
+  <app-header></app-header>
+  <section class="page-wrapper">
+    <router-outlet></router-outlet>
+  </section>
+  <app-footer></app-footer>
+</div>
+<ng-template #navContent>
+  <div class="mobile-nav">
+    <app-nav-links></app-nav-links>
+  </div>
+</ng-template>

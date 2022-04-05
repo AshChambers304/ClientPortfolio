@@ -1,0 +1,21 @@
+<div class="project-container" @fade>
+  <h1 class="title">{{ this.currentProject.title }}</h1>
+
+  <div class="image-container" @fade>
+    <div *ngFor="let image of this.currentProject.images; let i = index">
+      <img
+        class="project-image"
+        src="{{ this.currentProject.images[i] }}"
+        (click)="openModal('carousel-modal', i)"
+      />
+    </div>
+  </div>
+</div>
+
+<jw-modal id="carousel-modal">
+  <app-carousel-dialog
+    [currentSlide]="currentSlide"
+    (closeModalEmitter)="closeModal($event)"
+    [slides]="slides"
+  ></app-carousel-dialog>
+</jw-modal>

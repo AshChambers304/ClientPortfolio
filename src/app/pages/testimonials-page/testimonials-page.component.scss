@@ -1,0 +1,27 @@
+@import "/src/variables.scss";
+
+.testimonials-wrapper {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding: 2rem;
+
+  .entry {
+    min-width: 50%;
+    text-align: justify;
+    margin-bottom: 2rem;
+    .info {
+      font-style: italic;
+      line-height: 1.8rem;
+    }
+    .name {
+      margin-top: 3rem;
+      text-align: right;
+    }
+    @media (min-width: 1200px) {
+      padding: 2rem;
+      max-width: 50%;
+      margin-bottom: 0px;
+    }
+  }
+}

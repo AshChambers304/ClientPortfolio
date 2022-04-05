@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Bentham&family=Lato:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bentham&display=swap");
+$vars: (
+  clr-primary: #808080,
+  clr-accent: #4b4846,
+  clr-tertiary: white,
+  ff: #{"Bentham",
+  serif},
+  ffn: #{"Lato",
+  sans-serif},
+  fs-ds: 12px,
+  fs-dm: 18px,
+  fs-dl: 24px,
+  fs-ms: 10px,
+  fs-mm: 12px,
+  fs-ml: 15px,
+  fw-l: 300,
+  fw-m: 400,
+  fw-b: 700,
+);
+
+@mixin var($property, $variable) {
+  #{$property}: map-get($vars, $variable);
+  #{$property}: var(--#{$variable});
+}

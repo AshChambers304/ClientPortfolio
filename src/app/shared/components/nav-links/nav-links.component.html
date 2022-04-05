@@ -1,0 +1,37 @@
+<nav>
+  <ul>
+    <li
+      (click)="onLinkClick()"
+      [routerLink]="['./']"
+      [routerLinkActive]="'active'"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a class="nav-text">Portfolio</a>
+      <div class="active-nav"></div>
+    </li>
+    <li
+      (click)="onLinkClick()"
+      [routerLink]="['testimonials']"
+      [routerLinkActive]="'active'"
+    >
+      <a class="nav-text">Testimonials</a>
+      <div class="active-nav"></div>
+    </li>
+    <li
+      (click)="onLinkClick()"
+      [routerLink]="['information']"
+      [routerLinkActive]="'active'"
+    >
+      <a class="nav-text">About</a>
+      <div class="active-nav"></div>
+    </li>
+    <li
+      (click)="onLinkClick()"
+      [routerLink]="['enquiry']"
+      [routerLinkActive]="'active'"
+    >
+      <a class="nav-text">Contact</a>
+      <div class="active-nav"></div>
+    </li>
+  </ul>
+</nav>

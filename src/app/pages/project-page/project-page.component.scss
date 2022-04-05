@@ -1,0 +1,57 @@
+@import "/src/variables.scss";
+
+.project-container {
+  max-width: 80vw;
+  margin: 0 10vw;
+}
+
+.title {
+  @include var(color, clr-accent);
+  @include var(font-family, ffn);
+  @include var(font-size, fs-ds);
+  @include var(font-weight, fw-m);
+  padding: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: color 0.5s;
+  letter-spacing: 2px;
+  text-align: center;
+  transition: color 0.5s;
+}
+
+.description {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.project-image {
+  max-width: 80vw;
+  height: auto;
+  object-fit: cover;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.description {
+  margin-left: 1rem;
+}
+
+@media (min-width: 900px) {
+  .image-container {
+    flex-direction: row;
+
+    .project-image {
+      max-width: 20vw;
+    }
+  }
+}
